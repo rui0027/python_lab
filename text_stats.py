@@ -14,7 +14,7 @@ def get_data(filename):
 if __name__ == "__main__":
     try:
         filename=sys.argv[1]
-        f=open("111.txt")
+        f=open(f"{filename}")
         f.close()
     except IndexError:
         print("Please enter file name.")
