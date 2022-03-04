@@ -15,6 +15,6 @@ structures, but you should reflect on which of the standard data types (or varia
 you have tried some other solution and updated your code later on, feel free to discuss the effects!
 
 We used list to save data because list is more flexible than tuples and has many built-in functions. 
-In the defined functions, sometimes we use dictionary to save the result of some object and the numbers of counts, because it's easier to sort paired data.
-Sometimes we need to change list into array so that we can use numpy.where to make the step of getting indexs of selected items easier.
+In the defined functions, we use dictionary to save the result of some object and the numbers of counts, because it's easier to sort paired data.
+We also need to change list into array so that we can use numpy.where() to make the step of getting indexs of selected items easier.
 """
