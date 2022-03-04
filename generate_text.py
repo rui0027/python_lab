@@ -15,14 +15,14 @@ def generate_text(file,word,num):
     i=0
     for i in range(maxnum):
         data1=numpy.array(data)
-        index=[i+1 for i in numpy.where(data1==cur_word)[0].tolist()]
+        index=[i+1 for i in numpy.where(data1==cur_word)[0].tolist()] #index of successors
         successor=[data[i] for i in index]
         if len(successor)==0:
-            msg=msg+" "+cur_word
+            msg=msg+" "+cur_word #stop generate if the word doesn's have any successor
             break
         else:
             sort_list=sorted([(x,successor.count(x)/len(successor)) for x in set(successor)],key=lambda x:x[1],reverse=True)
-            cur_word=choice([x[0] for x in sort_list],1,[x[1] for x in sort_list])[0].tolist()
+            cur_word=choice([x[0] for x in sort_list],1,[x[1] for x in sort_list])[0].tolist() #randomly select a successor by weights
             msg=str(msg)+" "+str(cur_word)
     return msg
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
         f=open(filename)
         f.close()
     except IndexError:
-        print("Please enter arguments: filename, starting word, maxinum number of text.")
+        print("Please enter three arguments: filename, starting word, maxinum number of text.")
     except FileNotFoundError:
         print("The file does not exist!" )
     else:
