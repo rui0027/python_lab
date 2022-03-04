@@ -1,0 +1,20 @@
+"""
+In addition, you should provide a brief answer to the following questions:
+
+[ ] In what way did you "clean up" or divide up the text into words (in the program; the text files should be left
+unaffected)? This does not have to be perfect in any sense, but it should at least avoid counting "lord",
+"Lord" and "lord." as different words.
+
+For each line of the text file, first we divided the line into words by using re.split() with some common seperators and converted all words into lower case. 
+Because some marks at the end of a line are treated as seperators, the words contain many useless "" in it. So we used a filter to select the real words.
+Then we merged the words into a empty list 'data' by extend() while reading the file.
+
+[ ] Which data structures have you used (such as lists, tuples, dictionaries, sets, ...)? Why does that choice
+make sense? You do not have to do any extensive research on the topics, or try to find exotic modern data
+structures, but you should reflect on which of the standard data types (or variants thereof) make sense. If
+you have tried some other solution and updated your code later on, feel free to discuss the effects!
+
+We used list to save data because list is more flexible than tuples and has many built-in functions. 
+In the defined functions, sometimes we use dictionary to save the result of some object and the numbers of counts, because it's easier to sort paired data.
+Sometimes we need to change list into array so that we can use numpy.where to make the step of getting indexs of selected items easier.
+"""
